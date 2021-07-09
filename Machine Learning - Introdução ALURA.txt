@@ -1,0 +1,67 @@
+#pelo longo?
+#perna curta?
+#faz auau?
+porco1 = [0, 1, 1]
+porco2 =[1, 0, 1]
+porco3 = [1, 1, 0]
+
+cachorro1 = [0, 1, 1]
+cachorro2 = [1, 0, 1]
+cachorro3 = [1, 1, 1]
+#sem ligação com os de cima
+
+treino_x= [porco1, porco2, porco3, cachorro1, cachorro2, cachorro3]
+treino_y = [1, 1, 1, 0, 0, 0] #0 cachorro, 1 porco
+
+from sklearn.svm import LinearSVC
+
+modelo = LinearSVC()
+modelo.fit(treino_x, treino_y)
+
+LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
+          intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+          multi_class='ovr', penalty='l2', random_state=None, tol=0.0001,
+          verbose=0)
+
+animal_misterioso = [1, 1, 1]
+modelo.predict([animal_misterioso])
+
+misterio1 = [1,1,1]
+misterio2 = [1,1,0]
+msiterio3 = [0,1,1]
+
+
+teste_x = [misterio1, misterio2, msiterio3]
+teste_y = [0, 1, 1]
+
+previsoes = modelo.predict(teste_x)
+previsoes
+
+from sklearn.metrics import accuracy_score
+
+accuracy_score(teste_y, previsoes)
+
+import pandas as pd
+
+uri = #"está aqui"
+dados = pd.read_cvs(uri)
+dados.head()
+
+dados.sample(5)
+#conferindo dados 
+
+x = dados [["home", "how_it_works", "contact"]]
+x.head()
+
+from sklearn.svm import LinearSVC
+from sklearn.model_selection import train_test_split
+
+modelo = LinearSVC()
+treino_x, teste_x, treino_y, teste_y = train_test_split(x, y)
+
+modelo.fit(treino_x, treino-y)
+
+previsoes = modelo.predict(teste_x)
+accuracy_score(teste_y, previsoes) * 100
+
+treino_x_shape
